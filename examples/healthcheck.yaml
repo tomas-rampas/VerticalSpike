@@ -1,0 +1,9 @@
+# examples/healthcheck.yaml — the only example file the spike supports
+service:
+  name: orders-api
+  image: kennethreitz/httpbin:latest
+
+step:
+  method: GET
+  path: /status/200
+  expectStatus: 200

@@ -1,0 +1,20 @@
+<Project Sdk="Aspire.AppHost.Sdk/13.3.5">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <!-- Pinned to specific versions for spike reproducibility (verified on NuGet 2026-05-29).
+         Aspire is wired via the Aspire.AppHost.Sdk above, which encapsulates the
+         Aspire.Hosting.AppHost package (-> Aspire.Hosting) AND the DCP orchestrator that
+         makes app.StartAsync() actually launch containers. A bare Aspire.Hosting
+         PackageReference would compile but not orchestrate at runtime. -->
+    <ItemGroup>
+        <PackageReference Include="YamlDotNet" Version="18.0.0" />
+        <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="5.3.0" />
+    </ItemGroup>
+
+</Project>
