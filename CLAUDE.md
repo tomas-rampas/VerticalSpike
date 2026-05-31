@@ -24,7 +24,7 @@ hybrid posture is deliberate, but it requires discipline to maintain — see
 |---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
 | Spike 1 | End-to-end vertical slice: one YAML → one container → one Roslyn-compiled step → one verdict, on .NET 10 / Aspire 13.x.                                      | PASS     |
 | Spike 2 | Provider contract and fragment composition: two providers (`http.rest` and `db-assert.postgres`) composed into one Roslyn script, on .NET 10 / Aspire 13.3.5 / Npgsql 10.0.2. | PASS     |
-| Spike 3 | Collectible AssemblyLoadContext under repeated iteration against the real provider closure — does memory return to baseline across thousands of iterations? | upcoming |
+| Spike 3 | Collectible AssemblyLoadContext under repeated iteration against the real provider closure — does memory return to baseline across thousands of iterations? | PASS     |
 
 The `LEARNED.md` file in this repo carries one paragraph per spike summarising
 what was discovered. Always append; do not edit prior spikes' entries. The
