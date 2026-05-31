@@ -1,0 +1,24 @@
+# examples/multi.yaml — two providers composing into one run.
+# An http.rest step (httpbin) and a db-assert.postgres step (Aspire-provisioned Postgres),
+# each asserting a platform-controlled constant so a PASS proves the platform, not the SUT.
+services:
+  - name: orders-api
+    image: kennethreitz/httpbin:latest
+    kind: container
+  - name: pg
+    kind: postgres
+    database: appdb
+
+steps:
+  - name: orders-up
+    type: http.rest
+    service: orders-api
+    method: GET
+    path: /status/200
+    expectStatus: 200
+
+  - name: db-up
+    type: db-assert.postgres
+    service: pg
+    query: SELECT 1
+    expectScalar: 1

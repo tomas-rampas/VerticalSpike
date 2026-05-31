@@ -10,6 +10,8 @@
     <ItemGroup>
         <PackageReference Include="YamlDotNet" Version="18.0.0" />
         <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="5.3.0" />
+        <PackageReference Include="Aspire.Hosting.PostgreSQL" Version="13.3.5" />
+        <PackageReference Include="Npgsql" Version="10.0.2" />
     </ItemGroup>
 
 </Project>
